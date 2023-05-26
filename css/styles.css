@@ -1,0 +1,87 @@
+@import './eyes.css';
+
+@keyframes moveLeftStache {
+    0% {
+        transform: rotate(-60deg);
+    }
+
+    50% {
+        transform: rotate(-40deg);
+    }
+
+    100% {
+        transform: rotate(-60deg)
+    }
+}
+
+@keyframes moveRightStache {
+    0% {
+        transform: rotate(60deg);
+    }
+
+    50% {
+        transform: rotate(40deg)
+    }
+
+    100% {
+        transform: rotate(60deg)
+    }
+}
+
+.mustache {
+    height: 180px;
+    width: 180px;
+    position: absolute;
+    color: rgb(34, 121, 38);
+    border-radius: 100%;
+     box-shadow:
+        150px 240px 0 0 rgb(34, 121, 38),
+        300px 240px 0 0 rgb(34, 121, 38);
+    top: 50px;
+    left: 50px;
+}
+
+.famous {
+    text-align: center;
+
+}
+
+.mustache::before {
+    content: "";
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    top: 90px;
+    left: 60px;
+    border-bottom: 150px solid rgb(34, 121, 38);
+    border-radius: 0 0 0 100%;
+    transform: rotate(-60deg);
+    transform-origin: right 250px;
+    animation-name: moveLeftStache;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.mustache::after {
+    content: '';
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    top: 90px;
+    left: 390px;
+    border-bottom: 150px solid rgb(34, 121, 38);
+    border-radius: 100% 0 100% 0;
+    transform: rotate(60deg);
+    transform-origin: left 250px;
+    animation-name: moveRightStache;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    transform: translate(30vw, 0)
+}
